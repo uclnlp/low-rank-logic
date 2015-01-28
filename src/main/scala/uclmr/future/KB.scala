@@ -236,7 +236,7 @@ class KB(k: Int = 100) extends Tensor {
   def prob(key1: CellIx, key2: CellIx)(implicit state: State): Double = sigmoid(vector1(key1).get dot vector2(key2).get)
 
   def toVerboseString(showTrain: Boolean = false)(implicit state: State) = {
-    import ml.wolfe.nlp.util.ANSIFormatter._
+    import ml.wolfe.util.ANSIFormatter._
 
     val cols = keys1
     val rows = if (isMatrix) keys2 else keys23

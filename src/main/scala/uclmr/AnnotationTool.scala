@@ -1,3 +1,4 @@
+/*
 package uclmr
 
 import java.io.{FileInputStream, File, PrintStream, InputStream}
@@ -155,3 +156,4 @@ object AnnotationTool {
     //Runtime.getRuntime.exec("/bin/ln -s %s %s".format(newFile.getAbsolutePath, latest.getAbsolutePath))
   }
 }
+*/

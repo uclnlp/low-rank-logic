@@ -1,8 +1,8 @@
-package ml.wolfe.apps.factorization.util
+package uclmr.util
 
 import java.io.FileWriter
 
-import ml.wolfe.nlp.util.ANSIFormatter._
+import ml.wolfe.util.ANSIFormatter._
 import ml.wolfe.util.ProgressBar
 
 import scala.collection.mutable.ArrayBuffer
@@ -51,7 +51,7 @@ object Action extends Enumeration {
 }
 
 object FormulaeAnnotator extends App {
-  import ml.wolfe.apps.factorization.util.Action._
+  import uclmr.util.Action._
 
   val filePath = args.lift(0).getOrElse("./data/formulae/1000.txt")
   val reannotate = args.lift(1).getOrElse("false").toBoolean
