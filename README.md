@@ -1,2 +1,2 @@
-Injecting Logical Background Knowledge into Embeddings for Relation Extraction
+Low-rank Logic Embeddings
 =============
