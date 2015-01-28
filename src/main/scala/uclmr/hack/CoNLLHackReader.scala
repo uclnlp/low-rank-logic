@@ -1,3 +1,4 @@
+
 package uclmr.hack
 
 import java.io.{File, FileWriter}
@@ -6,8 +7,8 @@ import java.util.Stack
 
 import cc.factorie.app.nlp.ner.NerTag
 import cc.factorie.app.nlp.parse.ParseTree
-import ml.wolfe.nlp.io.{ChunkReader, CoNLLReader}
-import ml.wolfe.nlp._
+//import ml.wolfe.nlp.io.{ChunkReader, CoNLLReader}
+//import ml.wolfe.nlp._
 import ml.wolfe.util.ProgressBar
 import org.json4s.NoTypeHints
 import org.json4s.native.Serialization
@@ -29,6 +30,7 @@ object Language extends Enumeration {
 }
 
 
+/*
 
 object CoNLLHackReader extends App {
 
@@ -471,6 +473,8 @@ object DepUtilsSpec extends App {
   }
 }
 
+*/
+
 /**
  * Singleton that keeps mapping from entity mentions to Freebase ids around.
  */
@@ -505,3 +509,4 @@ object EntityHackNormalization {
 
   //println(portugueseMap.head)
 }
+
