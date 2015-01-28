@@ -1,0 +1,16 @@
+outDir = "data/out"
+logFile = "data/out/experiments.log"
+mf {
+	unobservedPerF = 1
+	k = 100
+	batchTraining = false
+	maxIter = 200
+	cellWeight = 1
+	outFile = "predict.txt"
+	alpha = 0.1
+	formulaeWeight = 1
+	optimizer = "AdaMira"
+	negPerPos = 1
+	subsample = 1
+	lambda = 0.01
+}
