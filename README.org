@@ -55,3 +55,7 @@ open ./data/out/latest/11pointPrecRecall.pdf
 #+BEGIN_SRC sh :session mf :results silent 
 open ./data/out/latest/table.pdf
 #+END_SRC
+
+
+  #+ATTR_HTML: title="Join the chat at https://gitter.im/uclmr/low-rank-logic"
+  [[https://gitter.im/uclmr/low-rank-logic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][file:https://badges.gitter.im/Join%20Chat.svg]]
