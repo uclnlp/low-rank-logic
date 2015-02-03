@@ -34,7 +34,7 @@ mv ~/Downloads/naacl2013.txt.zip ./src/main/resources
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf.conf'
 #+END_SRC
 
-***** Matrix factorization injecting formulae
+***** Matrix factorization with injecting formulae
 #+BEGIN_SRC sh :session mf :results silent
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf-logic.conf'
 #+END_SRC
