@@ -1,4 +1,17 @@
-**** Open session and move to the project directory
+** Low-rank Logic Embeddings
+
+**** Prerequisites
+- [[http://git-scm.com/][git]] to clone the repository)
+- [[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html][Java JDK]] and [[http://www.scala-sbt.org/][sbt]] to run code
+- [[http://www.gnuplot.info/][gnuplot]] to reproduce evaluation plots
+- pdflatex to reproduce pdf tables
+
+**** Clone the repository
+#+BEGIN_SRC sh :session mf :results silent
+cd ~/workspace
+git clone https://github.com/uclmr/low-rank-logic.git
+#+END_SRC
+**** Move to the project directory
 #+BEGIN_SRC sh :session mf :results silent
 cd ~/workspace/low-rank-logic
 #+END_SRC
@@ -9,15 +22,21 @@ cd ~/workspace/low-rank-logic
 open ???
 #+END_SRC
 
+If you have a license for the NYT corpus please write us a mail to obtain the =naacl2013.txt.zip= file.
 ***** Move to resources
 #+BEGIN_SRC sh :session mf :results silent
 mv ~/Downloads/naacl2013.txt.zip ./src/main/resources
 #+END_SRC
 
-**** Run matrix factorization
-***** NAACL13
+**** Running
+***** Matrix factorization
 #+BEGIN_SRC sh :session mf :results silent
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf.conf'
+#+END_SRC
+
+***** Matrix factorization injecting formulae
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf-logic.conf'
 #+END_SRC
 
 **** Evaluate
