@@ -1,2 +1,0 @@
-Low-rank Logic Embeddings
-=============
