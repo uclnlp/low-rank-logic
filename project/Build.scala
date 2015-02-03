@@ -23,11 +23,21 @@ object Build extends Build {
         "net.sandrogrzicic" %% "scalabuff-compiler" % "1.3.6",
         "net.sandrogrzicic" %% "scalabuff-runtime" % "1.3.6",
         "com.google.protobuf" % "protobuf-java" % "2.3.0"
-      )
+      ),
+      commands ++= Seq(vmargs),
+      fork in run := true //use a fresh JVM for sbt run
     )
   ) dependsOn (
     wolfeCore % "test->test;compile->compile",
     wolfeUtil % "test->test;compile->compile"//,
     //wolfeNLP % "test->test;compile->compile"
   )
+
+  //utility methods
+  def vmargs = Command.args("vmargs", "<name>") {
+    (state, args) =>
+      val javaRunOptions = args.mkString(" ")
+      println("Applying JVM arguments: " + javaRunOptions)
+      Project.extract(state).append(javaOptions := Seq(javaRunOptions), state)
+  }
 }
