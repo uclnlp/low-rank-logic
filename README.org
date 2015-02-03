@@ -10,7 +10,7 @@
 - [[http://www.gnuplot.info/][gnuplot]] to reproduce evaluation plots
 - pdflatex to reproduce pdf tables
 
-** Download
+** Download code
 *** Clone the repository
 #+BEGIN_SRC sh :session mf :results silent
 cd ~/workspace
@@ -28,7 +28,7 @@ sbt clean compile test
 #+END_SRC
 
 
-** Download corpus
+** Download data
 *** NAACL13
 If you have a license for the NYT corpus please write us a mail to obtain the link to the =naacl2013.txt.zip= file.
 
@@ -37,7 +37,7 @@ If you have a license for the NYT corpus please write us a mail to obtain the li
 mv ~/Downloads/naacl2013.txt.zip ./src/main/resources
 #+END_SRC
 
-** Running
+** Run models
 *** Matrix factorization
 #+BEGIN_SRC sh :session mf :results silent
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf.conf'
@@ -48,7 +48,7 @@ sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf.conf'
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf-logic.conf'
 #+END_SRC
 
-** Evaluate
+** Evaluate predictions
 #+BEGIN_SRC sh :session mf :results silent 
 sbt 'run-main uclmr.io.EvaluateNAACL ./conf/eval.conf ./data/out/latest/predict.txt'
 #+END_SRC
