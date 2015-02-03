@@ -1,6 +1,6 @@
 ** Low-rank Logic Embeddings
 
-[[https://travis-ci.org/uclmr/low-rank-logic.svg]] 
+[[https://travis-ci.org/uclmr/low-rank-logic.svg]] [[https://badge.waffle.io/uclmr/low-rank-logic.png?label=ready&title=Ready]]
 
 **** Prerequisites
 - [[http://git-scm.com/][git]] to clone the repository
