@@ -10,24 +10,27 @@
 - [[http://www.gnuplot.info/][gnuplot]] to reproduce evaluation plots
 - pdflatex to reproduce pdf tables
 
-** Clone the repository
+** Download
+*** Clone the repository
 #+BEGIN_SRC sh :session mf :results silent
 cd ~/workspace
 git clone https://github.com/uclmr/low-rank-logic.git
 #+END_SRC
 
-** Move to the project directory
+*** Move to the project directory
 #+BEGIN_SRC sh :session mf :results silent
 cd ~/workspace/low-rank-logic
 #+END_SRC
 
+*** Compile and test
+#+BEGIN_SRC sh :session mf :results silent
+sbt clean compile test
+#+END_SRC
+
+
 ** Download corpus
 *** NAACL13
 If you have a license for the NYT corpus please write us a mail to obtain the link to the =naacl2013.txt.zip= file.
-
-#+BEGIN_SRC sh :session mf :results silent
-open ???
-#+END_SRC
 
 **** Move to resources
 #+BEGIN_SRC sh :session mf :results silent
