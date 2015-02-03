@@ -1,7 +1,7 @@
 ** Low-rank Logic Embeddings
 
 **** Prerequisites
-- [[http://git-scm.com/][git]] to clone the repository)
+- [[http://git-scm.com/][git]] to clone the repository
 - [[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html][Java JDK]] and [[http://www.scala-sbt.org/][sbt]] to run code
 - [[http://www.gnuplot.info/][gnuplot]] to reproduce evaluation plots
 - pdflatex to reproduce pdf tables
