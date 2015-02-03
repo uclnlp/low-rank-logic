@@ -1,0 +1,11 @@
+language: scala
+scala:
+   - 2.10.4
+jdk:
+   - oraclejdk8
+
+#script: "sbt clean scoverage:test"
+script: "sbt test"
+
+#after_script:
+#
