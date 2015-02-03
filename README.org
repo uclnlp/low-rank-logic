@@ -4,6 +4,9 @@
 [[https://gitter.im/uclmr/low-rank-logic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][file:https://badges.gitter.im/Join%20Chat.svg]] 
 [[https://waffle.io/uclmr/low-rank-logic][https://badge.waffle.io/uclmr/low-rank-logic.png?label=ready&title=Ready]]
 
+[[./overview.png]]
+
+
 *** Prerequisites
 - [[http://git-scm.com/][git]] to clone the repository
 - [[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html][Java JDK]] and [[http://www.scala-sbt.org/][sbt]] to run code
