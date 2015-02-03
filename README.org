@@ -1,6 +1,6 @@
 ** Low-rank Logic Embeddings
 
-[[https://travis-ci.org/uclmr/low-rank-logic.svg]] [[https://badge.waffle.io/uclmr/low-rank-logic.png?label=ready&title=Ready]]
+[[https://travis-ci.org/uclmr/low-rank-logic.svg]] [[https://gitter.im/uclmr/low-rank-logic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][file:https://badges.gitter.im/Join%20Chat.svg]] [[https://badge.waffle.io/uclmr/low-rank-logic.png?label=ready&title=Ready]]
 
 **** Prerequisites
 - [[http://git-scm.com/][git]] to clone the repository
@@ -55,7 +55,3 @@ open ./data/out/latest/11pointPrecRecall.pdf
 #+BEGIN_SRC sh :session mf :results silent 
 open ./data/out/latest/table.pdf
 #+END_SRC
-
-
-  #+ATTR_HTML: title="Join the chat at https://gitter.im/uclmr/low-rank-logic"
-  [[https://gitter.im/uclmr/low-rank-logic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][file:https://badges.gitter.im/Join%20Chat.svg]]
