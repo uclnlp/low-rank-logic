@@ -46,7 +46,7 @@ class EvaluateNAACL(configFile: String, pathToLatestPredictions: String) {
       "./data/naacl2013/structured/test-riedel13-model-NF.txt:Riedel13-NF"
     )
     val rankFileNamesAndLabelsSplit = rankFileNamesAndLabels.map(name =>
-      if (name.substring(3).contains(":")) Array(name.substring(0, name.lastIndexOf(":")), name.substring(name.lastIndexOf(":")) + 1)
+      if (name.substring(3).contains(":")) Array(name.substring(0, name.lastIndexOf(":")), name.substring(name.lastIndexOf(":") + 1))
       else Array(name, new File(name).getName)
     ).toSeq
 
