@@ -48,9 +48,8 @@ object SubsampleExperiments extends App {
   RunExperimentSeries(series, threads, confPath) { conf =>
     (Process(Seq(
       "sbt",
-      "project wolfe-apps",
-      "vmargs -Xmx8G",
-      s"run-main ml.wolfe.apps.factorization.MatrixFactorization $conf"), new File(correctDir)
+      "vmargs -Xmx4G",
+      s"run-main uclmrfix.MatrixFactorization $conf"), new File(correctDir)
     ) #>> runLogFile).!!
 
     progressBar(conf)
