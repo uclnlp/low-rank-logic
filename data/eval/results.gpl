@@ -5,6 +5,8 @@ set key width 0.5
 set key box
 
 load 'Set1.plt'
+#load 'Spectral.plt'
+
 
 set terminal pdf enhanced linewidth 3.0  size 3.000000,2.00000
 set output "results.pdf"
