@@ -18,6 +18,9 @@
 #+BEGIN_SRC sh :session mf :results silent
 cd ~/workspace
 git clone https://github.com/uclmr/low-rank-logic.git
+git submodule update --init --recursive
+cd wolfe
+git checkout tags/v0.4.0
 #+END_SRC
 
 **** Move to the project directory
@@ -64,4 +67,9 @@ open ./data/out/latest/11pointPrecRecall.pdf
 **** Open results table
 #+BEGIN_SRC sh :session mf :results silent 
 open ./data/out/latest/table.pdf
+#+END_SRC
+
+*** Subsample Experiments
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'run-main uclmr.io.SubsampleExperiments 20'
 #+END_SRC

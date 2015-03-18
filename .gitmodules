@@ -1,0 +1,4 @@
+[submodule "wolfe"]
+	path = wolfe
+	url = git@github.com:wolfe-pack/wolfe.git
+	branch = dev

@@ -2,8 +2,6 @@ package uclmr.io
 
 import java.io._
 
-import ml.wolfe.apps._
-import ml.wolfe.apps.factorization._
 import org.sameersingh.scalaplot._
 import org.sameersingh.scalaplot.gnuplot.GnuplotPlotter
 import uclmr._

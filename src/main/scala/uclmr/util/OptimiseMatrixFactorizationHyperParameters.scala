@@ -1,6 +1,5 @@
 package uclmr.util
 
-import ml.wolfe.apps.factorization._
 import ml.wolfe.util._
 import uclmr.MatrixFactorization
 

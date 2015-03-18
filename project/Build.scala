@@ -7,9 +7,9 @@ object Build extends Build {
   val Version = "0.1.0-SNAPSHOT"
   val ScalaVersion = "2.10.4"
 
-  lazy val wolfeCore = ProjectRef(uri("https://github.com/wolfe-pack/wolfe.git#v0.4.0"), "wolfe-core")
-  lazy val wolfeUtil = ProjectRef(uri("https://github.com/wolfe-pack/wolfe.git#v0.4.0"), "wolfe-util")
-  //lazy val wolfeNLP = ProjectRef(uri("https://github.com/wolfe-pack/wolfe.git"), "wolfe-nlp")
+
+  lazy val wolfeCore = ProjectRef(file("./wolfe"), "wolfe-core")
+  lazy val wolfeUtil = ProjectRef(file("./wolfe"), "wolfe-util")
 
   lazy val root = Project(
     "low-rank-logic",
@@ -30,7 +30,6 @@ object Build extends Build {
   ) dependsOn (
     wolfeCore % "test->test;compile->compile",
     wolfeUtil % "test->test;compile->compile"//,
-    //wolfeNLP % "test->test;compile->compile"
   )
 
   //utility methods

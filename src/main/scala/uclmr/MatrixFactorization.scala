@@ -319,6 +319,7 @@ class MatrixFactorization(confPath: String = "conf/mf.conf") {
       dataType match {
         case "naacl" =>
           WriteNAACL(db, pathToPredict)
+          val evalConf = "./conf/" + Conf.getString("evalConf")
           wMAP = new EvaluateNAACL("./conf/eval.conf", pathToPredict).eval()
         case "figer" =>
           WriteFIGER(db, pathToPredict)
