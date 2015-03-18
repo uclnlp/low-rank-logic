@@ -71,5 +71,5 @@ open ./data/out/latest/table.pdf
 
 *** Subsample Experiments
 #+BEGIN_SRC sh :session mf :results silent
-sbt 'run-main uclmr.io.SubsampleExperiments 20'
+sbt 'run-main uclmr.util.SubsampleExperiments 20'
 #+END_SRC

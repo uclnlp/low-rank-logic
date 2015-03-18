@@ -16,6 +16,8 @@ object SubsampleExperiments extends App {
   val logFilePath = args.lift(3).getOrElse("data/out/experiments.log")
   val runLogFilePath = args.lift(4).getOrElse("data/out/run.log")
   val runLogFile = new File(runLogFilePath)
+  val runLogFileDir = new File(runLogFilePath.split("/").init.mkString("/"))
+  runLogFileDir.mkdirs()
   runLogFile.createNewFile()
 
 
