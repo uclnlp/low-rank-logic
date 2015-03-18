@@ -35,11 +35,8 @@ object SubsampleExperiments extends App {
   import scala.sys.process._
   val userDir = System.getProperty("user.dir")
 
-  //check whether in the right directory
-  val correctDir = if (userDir.endsWith("/wolfe")) userDir else userDir.split("/").init.mkString("/")
-
   //first compile project for all workers so that there will be no clashes
-  Process(Seq("sbt", "compile"), new File(correctDir)).!
+  Process(Seq("sbt", "compile"), new File(userDir)).!
 
 
   val progressBar = new ProgressBar(series.values.map(_.size).product, 1)
@@ -49,7 +46,7 @@ object SubsampleExperiments extends App {
     (Process(Seq(
       "sbt",
       "vmargs -Xmx4G",
-      s"run-main uclmrfix.MatrixFactorization $conf"), new File(correctDir)
+      s"run-main uclmrfix.MatrixFactorization $conf"), new File(userDir)
     ) #>> runLogFile).!!
 
     progressBar(conf)
