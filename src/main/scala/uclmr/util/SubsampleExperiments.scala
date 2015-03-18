@@ -46,7 +46,7 @@ object SubsampleExperiments extends App {
     (Process(Seq(
       "sbt",
       "vmargs -Xmx4G",
-      s"run-main uclmrfix.MatrixFactorization $conf"), new File(userDir)
+      s"run-main uclmr.MatrixFactorization $conf"), new File(userDir)
     ) #>> runLogFile).!!
 
     progressBar(conf)
