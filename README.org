@@ -21,9 +21,10 @@ git clone https://github.com/uclmr/low-rank-logic.git
 git submodule update --init --recursive
 cd wolfe
 git checkout tags/v0.4.0
+cd ..
 #+END_SRC
 
-**** Move to the project directory
+**** COMMENT Move to the project directory
 #+BEGIN_SRC sh :session mf :results silent
 cd ~/workspace/low-rank-logic
 #+END_SRC
@@ -43,33 +44,39 @@ If you have a license for the NYT corpus please write us a mail to obtain the li
 mv ~/Downloads/naacl2013.txt.zip ./src/main/resources
 #+END_SRC
 
-*** Run models
+*** Comparison on Complete Data (Figure 3)
 **** Matrix factorization
 #+BEGIN_SRC sh :session mf :results silent
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf.conf'
 #+END_SRC
 
-**** Matrix factorization with injecting formulae
+**** Joint Optimization (Section 3.2)
 #+BEGIN_SRC sh :session mf :results silent
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf-logic.conf'
 #+END_SRC
+
+*** Zero-shot Relation Learning (Table 1)
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf-0-logic.conf'
+#+END_SRC
+
+*** Relations with Few Distant Labels (Figure 2)
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'run-main uclmr.util.SubsampleExperiments 4'
+#+END_SRC
+=4= is the number of threads used to run experiments in parallel.
 
 *** Evaluate predictions
 #+BEGIN_SRC sh :session mf :results silent 
 sbt 'run-main uclmr.io.EvaluateNAACL ./conf/eval.conf ./data/out/latest/predict.txt'
 #+END_SRC
 
-**** Open PR curve 
+**** COMMENT Open PR curve 
 #+BEGIN_SRC sh :session mf :results silent 
 open ./data/out/latest/11pointPrecRecall.pdf
 #+END_SRC
 
-**** Open results table
+**** COMMENT Open results table
 #+BEGIN_SRC sh :session mf :results silent 
 open ./data/out/latest/table.pdf
-#+END_SRC
-
-*** Subsample Experiments
-#+BEGIN_SRC sh :session mf :results silent
-sbt 'run-main uclmr.util.SubsampleExperiments 20'
 #+END_SRC
