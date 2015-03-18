@@ -47,17 +47,34 @@ mv ~/Downloads/naacl2013.txt.zip ./src/main/resources
 *** Comparison on Complete Data (Figure 3)
 **** Matrix factorization
 #+BEGIN_SRC sh :session mf :results silent
-sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf.conf'
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-MF.conf'
 #+END_SRC
 
 **** Joint Optimization (Section 3.2)
 #+BEGIN_SRC sh :session mf :results silent
-sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf-logic.conf'
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Joint.conf'
 #+END_SRC
 
 *** Zero-shot Relation Learning (Table 1)
+- MF (matrix factorization)
 #+BEGIN_SRC sh :session mf :results silent
-sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/mf-0-logic.conf'
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Zero-MF.conf'
+#+END_SRC
+- Inf (logical inference)
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Zero-Inf.conf'
+#+END_SRC
+- Post (post-factorization inference)
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Zero-Post.conf'
+#+END_SRC
+- Pre (pre-factorization inference)
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Zero-Pre.conf'
+#+END_SRC
+- Joint (joint optimization)
+#+BEGIN_SRC sh :session mf :results silent
+sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Zero-Joint.conf'
 #+END_SRC
 
 *** Relations with Few Distant Labels (Figure 2)
@@ -79,4 +96,14 @@ open ./data/out/latest/11pointPrecRecall.pdf
 **** COMMENT Open results table
 #+BEGIN_SRC sh :session mf :results silent 
 open ./data/out/latest/table.pdf
+#+END_SRC
+
+*** Citing
+#+BEGIN_SRC latex
+@inproceedings{rocktaschel2015injecting,
+  title={{Injecting Logical Background Knowledge into Embeddings for Relation Extraction}},
+  author={Rockt{\"a}schel, Tim and Singh, Sameer and Riedel, Sebastian},
+  booktitle={Proceedings of NAACL-HLT},
+  year={2015}
+}
 #+END_SRC
