@@ -1,4 +1,4 @@
-package ml.wolfe.apps.factorization.util
+package uclmr.util
 
 import java.io.File
 
@@ -11,7 +11,7 @@ import scala.util.Random
  */
 object SubsampleExperiments extends App {
   val threads = args.lift(0).getOrElse("1").toInt
-  val formulaeFile = args.lift(1).getOrElse("data/formulae/curated.txt")
+  val formulaeFile = args.lift(1).getOrElse("data/formulae/filtered.txt")
   val confPath = args.lift(2).getOrElse("conf/mf.conf")
   val logFilePath = args.lift(3).getOrElse("data/out/experiments.log")
   val runLogFilePath = args.lift(4).getOrElse("data/out/run.log")
@@ -24,10 +24,7 @@ object SubsampleExperiments extends App {
   val rand = new Random(0l)
 
   val series = Map(
-    //"mf.subsample" -> (0 to 10).map(_ / 10.0).toSeq,
-    "mf.subsample" -> (16 to 20).map(_ / 40.0).toSeq,
-    //"formulaeFile" -> Seq("None", formulaeFile),
-    //"mf.mode" -> Seq("mf", "low-rank-logic", "pre-inference", "post-inference", "pre-post-inference", "inference-only")
+    "mf.subsample" -> (0 to 20).map(_ / 40.0).toSeq,
     "mf.mode" -> Seq("mf", "low-rank-logic", "pre-inference", "post-inference", "inference-only")
   ).mapValues(rand.shuffle(_))
 
@@ -42,7 +39,7 @@ object SubsampleExperiments extends App {
   Process(Seq("sbt", "compile"), new File(correctDir)).!
 
 
-  val progressBar = new ProgressBar(series.values.map(_.size).foldLeft(1)(_ * _), 1)
+  val progressBar = new ProgressBar(series.values.map(_.size).product, 1)
   progressBar.start()
 
   RunExperimentSeries(series, threads, confPath) { conf =>
