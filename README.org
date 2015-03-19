@@ -99,7 +99,7 @@ open ./data/out/latest/table.pdf
 #+END_SRC
 
 *** Citing
-#+BEGIN_SRC sh
+#+BEGIN_SRC latex
 @inproceedings{rocktaschel2015injecting,
   title={{Injecting Logical Background Knowledge into Embeddings for Relation Extraction}},
   author={Rockt{\"a}schel, Tim and Singh, Sameer and Riedel, Sebastian},
