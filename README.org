@@ -77,6 +77,14 @@ sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Zero-Pr
 sbt 'vmargs -Xmx8G' 'run-main uclmr.MatrixFactorization ./conf/naacl2015-Zero-Joint.conf'
 #+END_SRC
 
+**** Generating Figure
+#+BEGIN_SRC sh :session mf :results silent
+cd data/eval
+tail -105 ../out/experiments.log > subsample.log
+gnuplot -e 'fileName = "subsample"' eval.gpl 
+open subsample-wMAP.pdf
+#+END_SRC
+
 *** Relations with Few Distant Labels (Figure 2)
 #+BEGIN_SRC sh :session mf :results silent
 sbt 'run-main uclmr.util.SubsampleExperiments 4'
