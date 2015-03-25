@@ -111,7 +111,7 @@ open ./data/out/latest/table.pdf
 @inproceedings{rocktaschel2015injecting,
   title={{Injecting Logical Background Knowledge into Embeddings for Relation Extraction}},
   author={Rockt{\"a}schel, Tim and Singh, Sameer and Riedel, Sebastian},
-  booktitle={Proceedings of NAACL-HLT},
+  booktitle = {Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)},
   year={2015}
 }
 #+END_SRC
