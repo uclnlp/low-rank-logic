@@ -4,6 +4,10 @@
 [[https://gitter.im/uclmr/low-rank-logic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][file:https://badges.gitter.im/Join%20Chat.svg]] 
 [[https://waffle.io/uclmr/low-rank-logic][https://badge.waffle.io/uclmr/low-rank-logic.png?label=ready&title=Ready]]
 
+This repository contains code accompanying the paper:
+[[http://rockt.github.io/][Tim Rocktäschel]], [[http://sameersingh.org][Sameer Singh]] and [[http://www.riedelcastro.org/][Sebastian Riedel]]. _Injecting Logical Background Knowledge into Embeddings for Relation Extraction_. /in: Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics – Human Language Technologies (NAACL HLT)/. 2015. [[[http://rockt.github.io/bib/rocktaschel2015injecting.bib][bib]]] [[[http://rockt.github.io/pdf/rocktaschel2015injecting.pdf][pdf]]]
+
+
 [[./overview.png]]
 
 
@@ -111,7 +115,7 @@ open ./data/out/latest/table.pdf
 @inproceedings{rocktaschel2015injecting,
   title={{Injecting Logical Background Knowledge into Embeddings for Relation Extraction}},
   author={Rockt{\"a}schel, Tim and Singh, Sameer and Riedel, Sebastian},
-  booktitle = {Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)},
+  booktitle = {Conference of the North American Chapter of the Association for Computational Linguistics – Human Language Technologies (NAACL HLT)},
   year={2015}
 }
 #+END_SRC
