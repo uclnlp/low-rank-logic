@@ -1,11 +1,8 @@
-/*
 package uclmr
 
 import java.io.{FileInputStream, File, PrintStream, InputStream}
 import java.text.SimpleDateFormat
 import java.util.Calendar
-
-import ml.wolfe.nlp.util.ANSIFormatter
 
 import scala.collection.mutable
 import scala.collection.mutable.{HashSet, HashMap}
@@ -16,7 +13,7 @@ import scala.io.Source
  */
 object AnnotationTool {
 
-  import ANSIFormatter._
+  import ml.wolfe.util.ANSIFormatter.ANSIString
 
   case class Annotation(tuple: Seq[Any], label: String, correct: Boolean) {
     override def toString = (Seq(if (correct) "1" else "0", label) ++ tuple).mkString("\t")
@@ -156,4 +153,3 @@ object AnnotationTool {
     //Runtime.getRuntime.exec("/bin/ln -s %s %s".format(newFile.getAbsolutePath, latest.getAbsolutePath))
   }
 }
-*/
