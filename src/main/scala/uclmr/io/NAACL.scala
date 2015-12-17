@@ -712,6 +712,7 @@ object LoadNAACL extends App {
 
 object WriteNAACL extends App {
   def apply(db: TensorDB, filePath: String = "./data/out/predict.txt"): Unit = {
+    writeDevPreds(db, filePath + ".dev")
     val writer = new FileWriter(filePath)
     val testCellsWithPrediction = db.testCells.map(c => {
       val r = c.key1
@@ -725,6 +726,26 @@ object WriteNAACL extends App {
 
 
     testCellsWithPrediction.foreach { case (cell, p) =>
+      val (e1, e2) = cell.key2.asInstanceOf[(String, String)]
+      writer.write(s"$p\t$e1|$e2\t" + "REL$NA" + s"\t${cell.key1}\n")
+    }
+    writer.close()
+  }
+
+  def writeDevPreds(db: TensorDB, filePath: String = "./data/out/predict.txt.dev"): Unit = {
+    val writer = new FileWriter(filePath)
+    val devCellsWithPrediction = db.devCells.map(c => {
+      val r = c.key1
+      val ep = c.key2
+
+      //if test cell has been inferred logically take target otherwise predict using distributed representation
+      val p = db.inferredCellsMap.get(r, ep).map(_.target).getOrElse(db.prob(r, ep))
+
+      (c, p)
+    }).sortBy(-_._2)
+
+
+    devCellsWithPrediction.foreach { case (cell, p) =>
       val (e1, e2) = cell.key2.asInstanceOf[(String, String)]
       writer.write(s"$p\t$e1|$e2\t" + "REL$NA" + s"\t${cell.key1}\n")
     }
